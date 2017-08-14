@@ -1,0 +1,17 @@
+package primeraClase;
+
+public class estudiante {
+	private int codigo;
+	private String nombre ;
+	
+	public estudiante(int codigo, String nombre)
+	{
+		this.codigo = codigo;
+		this.nombre = nombre;
+	}
+	public String toString()
+	{
+		return("El nombre es " + nombre + ",con codigo " + codigo);
+	}
+}
+	
