@@ -96,6 +96,27 @@ public class operaciones_basicas {
     
     public double[] ecuacion_cuadratica(int a, int b, int c)
     {
-        return null; // tarea de la cuadratica
+         
+      d = ((b*b)-(4*a*c));
+      e= ((2)*(a));
+       
+    }
+    if(e <= 0)
+    {
+       return Double.NaN; // no se puede dividir entre cero
+    }
+    if(d < 0)
+    {
+        return Double.NaN ; // no existe raiz de un numero negativo
+}
+    else{
+    int h=Math.sqrt(d); 
+    int f =(((-b)+(h))/e);  //x1 +
+    int g=(((-b)-(h))/e);   //x2 -
+    return f ;
+    return g ;
+}
+    
+
     }
 }
