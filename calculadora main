@@ -1,0 +1,115 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package calculadora;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+/**
+ *
+ * @author Administrador
+ */
+public class Calculadora {
+    static BufferedWriter bw = new BufferedWriter ( new OutputStreamWriter(System.out));
+    static BufferedReader br = new BufferedReader ( new InputStreamReader(System.in));
+ 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        // TODO code application logic here
+    }
+    
+    public static void int opciones () throws IOException
+    {
+        bw.write("\n\n Escoja alguna de las siguientes opciones: 1. Suma\n2. Resta\n3 . Multiplicacion\n4. Division\n5. Modulo\n6. potencia\n7. factorial\n8. cuadratica\n9. salir\n10");
+        return Integer.parseInt(br.readLine());
+    }
+    public static int [] getParameters(int action) throws IOException
+    {
+        operaciones_basicas operations = new operaciones_basicas();
+        
+        int[] parameters;
+        switch(action)
+        {
+            case 1:  //suma
+            {
+                parameters = new int[2];
+                bw.write("ingrese el primer termino de la suma");
+                parameters [0] = Integer.parseInt(br.readLine());
+                
+                bw.write("ingrese el segundo termino de la suma");
+                parameters [1] = Integer.parseInt(br.readLine());
+                
+                return parameters;
+            }
+            break;
+            case 2:
+                    {
+                    int result = operations.resta(parameters[0], parameters[1]);
+                    bw.write("El resultado de la resta es" + result + "\n");
+                    }
+                    break;
+            case 3:
+                    {
+                    int result = operations.multiplicacion(parameters[0], parameters[1]);
+                    bw.write("El resultado de la multiplicacion es" + result + "\n");   
+                    }
+                    break;
+            case 4:
+                    {
+                    double result = operations.division(parameters[0], parameters[1]);
+                    DecimalFormat df = new DecimalFormat  ("#0.00000");
+                    
+                    if(result == Double.NaN)
+                    {
+                        bw.write("la division por cero no esta permitida");
+                        
+                     
+                    }
+                    else
+                    {
+                        bw.write("el resultado de la division es:" + df.forma(result) + "\n");
+                        
+                    }
+                    }
+                    break;
+            case 5:
+                    {
+                        
+                    }
+                    break;
+            case 6:
+                    {
+                    int result = operations.potencia(parameters[0], parameters[1]);
+                    bw.write("El resultado de la potencia es" + result + "\n");   
+                    }
+                    break;
+            case 7:
+                    {
+                        int result = operations.factorial(parameters[0]);
+                    bw.write("El resultado de la multiplicacion es" + result + "\n");   
+                    }
+                    break;
+            case 8:
+                    {
+                    double result = operations.ecuacion_cuadratica(parameters[0], parameters[1], parameters[2], parameters[3]);
+                    bw.write("las raices de son  x1 =" + result[0] + " y x2 = " + result[1] + "\n"  );
+                    }
+                    break;
+            default: 
+            {
+                System.exit(1);
+            }
+                    
+        }
+    }
+    
+}
