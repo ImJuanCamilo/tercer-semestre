@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package calculadora;
 
 import java.io.BufferedReader;
@@ -10,24 +5,19 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.text.DecimalFormat;
 
-/**
- *
- * @author Administrador
- */
+
 public class Calculadora {
     static BufferedWriter bw = new BufferedWriter ( new OutputStreamWriter(System.out));
     static BufferedReader br = new BufferedReader ( new InputStreamReader(System.in));
  
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
         
-        // TODO code application logic here
     }
     
-    public static void int opciones () throws IOException
+    public static int opciones () throws IOException
     {
         bw.write("\n\n Escoja alguna de las siguientes opciones: 1. Suma\n2. Resta\n3 . Multiplicacion\n4. Division\n5. Modulo\n6. potencia\n7. factorial\n8. cuadratica\n9. salir\n10");
         return Integer.parseInt(br.readLine());
@@ -48,27 +38,47 @@ public class Calculadora {
                 bw.write("ingrese el segundo termino de la suma");
                 parameters [1] = Integer.parseInt(br.readLine());
                 
-                return parameters;
-            }
-            break;
-            case 2:
+                 bw.write ("el resultado de la suma es:" + (parameters [0] +parameters[1]) + "\n");
+                 }
+                break;
+                
+            case 2:  //resta
                     {
-                    int result = operations.resta(parameters[0], parameters[1]);
-                    bw.write("El resultado de la resta es" + result + "\n");
+                    parameters = new int[2];
+                bw.write("ingrese el primer termino de la resta");
+                parameters [0] = Integer.parseInt(br.readLine());
+                
+                bw.write("ingrese el segundo termino de la resta");
+                parameters [1] = Integer.parseInt(br.readLine());
+                
+                bw.write ("el resultado de la resta es:" + (parameters [0] - parameters[1]) + "\n");
                     }
                     break;
-            case 3:
+                    
+            case 3: // multiplicacion
                     {
-                    int result = operations.multiplicacion(parameters[0], parameters[1]);
-                    bw.write("El resultado de la multiplicacion es" + result + "\n");   
+                    parameters = new int[2];
+                bw.write("ingrese el primer termino de la multiplicacion");
+                parameters [0] = Integer.parseInt(br.readLine());
+                
+                bw.write("ingrese el segundo termino de la multiplicacion");
+                parameters [1] = Integer.parseInt(br.readLine());   
+                
+                bw.write ("el resultado de la multilicacion es:" + (parameters [0] * parameters[1]) + "\n");
                     }
                     break;
-            case 4:
+                    
+            case 4: // division
                     {
-                    double result = operations.division(parameters[0], parameters[1]);
+                   parameters = new int[2];
+                bw.write("ingrese el primer termino de la division");
+                parameters [0] = Integer.parseInt(br.readLine());
+                
+                bw.write("ingrese el segundo termino de la division");
+                parameters [1] = Integer.parseInt(br.readLine());
                     DecimalFormat df = new DecimalFormat  ("#0.00000");
                     
-                    if(result == Double.NaN)
+                    if(parameters [1] == Double.NaN)
                     {
                         bw.write("la division por cero no esta permitida");
                         
@@ -76,29 +86,51 @@ public class Calculadora {
                     }
                     else
                     {
-                        bw.write("el resultado de la division es:" + df.forma(result) + "\n");
+                        bw.write("el resultado de la division es:" + df.format(parameters [0]/parameters[1]) + "\n");
                         
                     }
                     }
                     break;
-            case 5:
+                    
+            case 5: // modulo
                     {
+                        parameters = new int[2];
+                        bw.write("ingrese el primer termino de el modulo");
+                        parameters [0] = Integer.parseInt(br.readLine());
+                
+                        bw.write("ingrese el segundo termino de el modulo");
+                        parameters [1] = Integer.parseInt(br.readLine());
+                        
+                        bw.write ("el resultado del modulo es:" + (parameters [0] % parameters[1]) + "\n");
                         
                     }
                     break;
-            case 6:
+                    
+            case 6: // potencia
                     {
-                    int result = operations.potencia(parameters[0], parameters[1]);
-                    bw.write("El resultado de la potencia es" + result + "\n");   
+                    parameters = new int[2];
+                    bw.write("ingrese la base de la potencia");
+                    parameters [0] = Integer.parseInt(br.readLine());
+                
+                    bw.write("ingrese el exponente");
+                     parameters [1] = Integer.parseInt(br.readLine());
+                    bw.write("El resultado de la potencia es" + (parameters [0] * parameters[1])  + "\n");   
                     }
                     break;
-            case 7:
+                    
+            case 7: // factorial
                     {
-                        int result = operations.factorial(parameters[0]);
-                    bw.write("El resultado de la multiplicacion es" + result + "\n");   
+                     parameters = new int[1];
+                    bw.write("ingrese el valor del factorial");
+                    parameters [0] = Integer.parseInt(br.readLine());
+                
+                    
+                     
+                    bw.write("El resultado de la multiplicacion es" +parameters [0] + "\n");   
                     }
                     break;
-            case 8:
+                    
+            case 8: // cuadratica
                     {
                     double result = operations.ecuacion_cuadratica(parameters[0], parameters[1], parameters[2], parameters[3]);
                     bw.write("las raices de son  x1 =" + result[0] + " y x2 = " + result[1] + "\n"  );
@@ -111,5 +143,5 @@ public class Calculadora {
                     
         }
     }
+
     
-}
