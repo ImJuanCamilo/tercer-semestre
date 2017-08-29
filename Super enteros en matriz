@@ -1,20 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package test;
 
 import static java.lang.Integer.max;
 import static java.lang.Integer.min;
 
-/**
- *
- * @author Administrador
- */
+
 public class SuperEnteros {
-    
-    public SuperEnteros(){
+
+ public SuperEnteros(){
         
     }
     public static void main(String[] args) {
@@ -52,7 +44,7 @@ public class SuperEnteros {
             result[i] += (number1[i] + number2[i]) % 10;
             result[i + 1] += aux;
         }
-       // if()
+        if(result[i] == %1)
         {
             
         }
@@ -62,12 +54,28 @@ public class SuperEnteros {
     public int [] resta (int[] number1, int [] number2)
     {
         int [] result = new int [max(number1.length, number2.length) ];
+        int i, aux;
+        
+        for(i =0; i< min(number1.length, number2.length);i++);
+        {
+            aux= (number1[i] - number2[i]) / 10;
+            result[i] += (number1[i] - number2[i]) % 10;
+            result[i + 1] += aux;
+        }
         return result;
     }
     
     public int [] multiplicacion(int[] number1, int [] number2)
     {
         int [] result = new int [number1.length + number2.length];
+          int i, aux;
+        
+        for(i =0; i< min(number1.length, number2.length);i++);
+        {
+            aux= (number1[i] * number2[i]) / 10;
+            result[i] += (number1[i] * number2[i]) % 10;
+            result[i + 1] += aux;
+        }
         return result;
     }
             
