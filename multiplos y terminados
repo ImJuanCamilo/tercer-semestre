@@ -1,0 +1,23 @@
+public class Multiplos
+{
+	public static void main(String[]args){
+	
+	int i, j;
+		System.out.print("Los multiplos de 7 son: ");
+	for(i=7; i<=100; i=i+7)
+	{
+	
+		System.out.print(i+(" "));
+	}
+	System.out.print("\n");
+	System.out.print("Los numeros terminados en 7 son: ");
+		for( j=7; j<=100; j=j+10)
+		{
+			System.out.print(j+ (" "));
+			
+		}
+		System.out.print("\n");
+	
+	}
+}
+	
