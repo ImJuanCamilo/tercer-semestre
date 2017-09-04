@@ -1,0 +1,15 @@
+package pruebas;
+import funciones.*;
+
+
+public class PuebasMain {
+
+    public static void main(String[] args) {
+        
+        Funciones obj = new Funciones ();
+        System.out.println(obj.metodoPi(10000));
+       
+    
+
+    }
+}
