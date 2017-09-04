@@ -1,9 +1,6 @@
 package test;
 
-/**
- *
- * @author Administrador
- */
+
 public class SuperEnteros {
 
     public SuperEnteros(){
@@ -11,6 +8,7 @@ public class SuperEnteros {
     
         
     }
+
     public static void main(String[] args) {
         SuperEnteros SE = new SuperEnteros();
         String number1 = "111111111";
@@ -124,8 +122,28 @@ public class SuperEnteros {
         int [] result = new int [number1.length + number2.length];
         return result;
     }
+    
+   
+    public double factorial(int num){
+      double acumulador = 1;
+      if(num==0 || num==1)
+        return 1;
+      else
+        for(int i=2; i<=num; i++)
+            acumulador = acumulador * i;
+      return acumulador;
+  }
+    
+    
+    public int fibonacci(int n) {
+        if (n <= 1) 
+            return n;
+        else 
+            return fibonacci(n-1) + fibonacci(n-2);
+    }
+
             
     
 }
     
-// fibonacci y factorial tarea//
+// fibonacci y tarea//
