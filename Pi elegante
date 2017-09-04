@@ -1,0 +1,28 @@
+
+/**
+ *
+ * @author Administrador
+ */
+public class Funciones {
+  
+    public double metodoPi(int numTerm)
+    {
+        int indice = 1, contador =0, signo=1;
+        double termino, sumaPi = 0;
+        
+        while(contador <= numTerm)
+        {
+            if(indice %2 != 0)
+            {
+                termino = (double) 4/indice*signo;
+                sumaPi = sumaPi + termino;
+                contador++;
+                signo *=-1;
+            }
+            indice ++;
+        }
+        return sumaPi;
+             
+    }
+    
+}
