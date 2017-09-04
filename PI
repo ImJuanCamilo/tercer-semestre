@@ -1,0 +1,28 @@
+package pi;
+
+import java.util.Scanner;
+
+public class Pi {
+
+    public static void main(String[] args) {
+     Scanner leer=new Scanner(System.in);
+     System.out.println("cuantos terminos de precision desea ");
+     int n=leer.nextInt();
+     System.out.println("Pi = "  + pi(n));
+ }
+ public static  double pi(int n)
+ {
+    int   denominador=1,signo=1; 
+    double termino,sumatoria=0;
+    for( int i=1;i<=n;i++)
+    {
+       termino= (float)4/denominador * signo; 
+       sumatoria +=termino ;
+       denominador += + 2;
+       signo *=-1;
+    }
+    return sumatoria;
+ }
+ 
+    
+}
