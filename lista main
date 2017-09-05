@@ -1,0 +1,41 @@
+package listas;
+
+import java.util.Vector;
+
+public class Listas {
+
+    public static void main(String[] args)
+    {
+        Vector<Student> lista = new Vector <Student> ();
+        
+        lista.add(new Student("Diego", "IS", 123456, 0.5));
+        lista.add(new Student());
+        lista.add(new Student("Franklin", "IS", 8212355, 1.0));
+        lista.add(new Student("Andres", "IS", 56556, 2.5));
+       
+        for(int i =0; i< lista.size(); i++)
+        System.out.println(lista.get(i).toString());
+        
+        System.out.println();
+        lista.remove(1); // quito el estudiante que no esta
+        
+        
+        for(int i =0; i< lista.size(); i++)
+        System.out.println(lista.get(i).toString());
+        
+        Student head = new Student ("Diego", "IS", 123456, 0.5);
+        Student nodo = new Student ("Franklin", "IS", 8212355, 1.0);
+        Student nodo2 = new Student ("Andres", "IS", 56556, 2.5);
+        
+        nodo.siguiente = nodo2;
+        head.siguiente = nodo;
+        
+        Student temp = head;
+               
+        
+        
+                
+        
+    }
+    
+}
